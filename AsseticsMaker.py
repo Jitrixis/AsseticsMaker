@@ -47,7 +47,7 @@ class analyzer:
 
     def __generateAssetName(self):
         text = self.__path + "-" + self.__filename + "-" + self.__extension
-        pattern = r'[^a-zA-Z\-]+'
+        pattern = r'[^a-zA-Z0-9\-]+'
         self.__assetName = re.sub(pattern, '-', text)
         pattern = r'\-\-+'
         self.__assetName = self.__vendor + re.sub(pattern, '-', self.__assetName)
