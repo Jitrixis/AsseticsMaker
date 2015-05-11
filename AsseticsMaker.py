@@ -1,6 +1,7 @@
 import sys
 import re
 
+
 class analyzer:
     def __init__(self, vendor, line):
         line = re.sub(r'\n', '', line)
@@ -45,7 +46,7 @@ class analyzer:
         self.__path = re.sub(pattern, '/\g<1>', self.__line)
 
     def __generateAssetName(self):
-        text = self.__path +"-"+ self.__filename +"-"+ self.__extension
+        text = self.__path + "-" + self.__filename + "-" + self.__extension
         pattern = r'[^a-zA-Z\-]+'
         self.__assetName = re.sub(pattern, '-', text)
         pattern = r'\-\-+'
@@ -71,6 +72,7 @@ class analyzer:
 
     def getIsFile(self):
         return self.__isFile
+
 
 print("#", sys.argv[1], sep='')
 for line in sys.stdin:
